@@ -19,21 +19,21 @@ const months = [
   "December"
 ];
 const renderCalendar = () => {
-  let firstDayofMonth = new Date(currentYear, currentMonth, 1).getDay(),
-    lastDateofMonth = new Date(currentYear, currentMonth + 1, 0).getDate(),
-    lastDayofMonth = new Date(
+  let firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+  let lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+  let lastDayOfMonth = new Date(
       currentYear,
       currentMonth,
-      lastDateofMonth
+      lastDateOfMonth
     ).getDay(),
-    lastDateofLastMonth = new Date(currentYear, currentMonth, 0).getDate();
+    lastDateOfLastMonth = new Date(currentYear, currentMonth, 0).getDate();
   let liTag = "";
-  for (let i = firstDayofMonth; i > 0; i--) {
+  for (let i = firstDayOfMonth; i > 0; i--) {
     liTag += `<li class="inactive"><p class="day-num">${
-      lastDateofLastMonth - i + 1
+      lastDateOfLastMonth - i + 1
     }</p></li>`;
   }
-  for (let i = 1; i <= lastDateofMonth; i++) {
+  for (let i = 1; i <= lastDateOfMonth; i++) {
     let isToday =
       i === date.getDate() &&
       currentMonth === new Date().getMonth() &&
@@ -43,9 +43,9 @@ const renderCalendar = () => {
     liTag += `<li class="${isToday}"><p class="day-num">${i}</p></li>`;
     console.log(isToday);
   }
-  for (let i = lastDayofMonth; i < 6; i++) {
+  for (let i = lastDayOfMonth; i < 6; i++) {
     liTag += `<li class="inactive"><p class="day-num">${
-      i - lastDayofMonth + 1
+      i - lastDayOfMonth + 1
     }</p></li>`;
   }
   currentDate.innerText = `${months[currentMonth]}`;
