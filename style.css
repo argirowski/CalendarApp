@@ -1,0 +1,125 @@
+.wrapper {
+  max-width: 1240px;
+  background: rgb(247, 235, 237);
+}
+
+.wrapper header {
+  display: flex;
+  align-items: center;
+  padding: 25px 0 0;
+  justify-content: space-between;
+}
+header .date-icons {
+  display: flex;
+  align-items: center;
+}
+
+.day-num {
+  display: flex;
+  justify-content: start;
+  margin-left: 12px;
+}
+header .date-icons span {
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.date-icons span:last-child {
+  margin-right: -10px;
+}
+header .icons span:hover {
+  background: #f2f2f2;
+}
+header .current-date {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 27px;
+  width: 127px;
+  display: flex;
+  justify-content: center;
+}
+
+.calendar {
+  padding: 20px;
+}
+.calendar ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.weeks {
+  padding: 0;
+  min-width: 125px;
+}
+
+.calendar .days {
+  margin-bottom: 20px;
+  padding: 0;
+}
+.calendar li {
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendar .weeks li {
+  display: flex;
+  justify-content: start;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #363a36;
+  cursor: default;
+}
+.calendar .days li {
+  border: 1px solid #d3dad3;
+  min-width: 125px;
+  min-height: 143px;
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+}
+.current-day,
+.current-month {
+  background: #ffffff;
+}
+.days li.inactive {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #949994;
+  background: #f9f9f9;
+}
+.days li.current-day {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+}
+.days li::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li.current-day::before {
+  background: #62b30b;
+}
+.days li:not(.current-day):hover::before {
+  background: #f2f2f2;
+}
